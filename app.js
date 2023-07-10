@@ -22,12 +22,12 @@ hbs.registerPartials(__dirname + '/views/partials');
 // Servir contenido estatico
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.render('home',{
-        nombre: "Cheems",
-        titulo: "Curso de Node"
-    });
-});
+// app.get('/', (req, res) => {
+//     res.render('home',{
+//         nombre: "Cheems",
+//         titulo: "Curso de Node"
+//     });
+// });
 
 
 app.get('/generic', (req, res) => {
@@ -47,7 +47,9 @@ app.get('/elements', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.sendFile('404.html',{root: 'public'});
+//    res.sendFile('404.html',{root: 'public/back/template/'});
+    res.sendFile('index.html',{root: 'public'});
+
 })
   
 // Iniciar app del servidor y escuchar
